@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>导论 | Hexo</title>
+  <meta name="description" content="序言​        本系列主要以Robert Sedgewich编著的《算法（第四版）》为蓝本用C++和JAVA这两门语言分别进行实现并将作者自己的思考与LeetCode题目作为补充，如有疏漏还请大佬指正。 ​		数据结构和算法这门课程作为计算机相关专业的专业课，并且被列为四大件之一（数据结构和算法、设计模式、计算机网络、计算机操作系统）其重要程度就无须再提了。 ​		而我们用上面所说的书作为本">
+<meta property="og:type" content="article">
+<meta property="og:title" content="导论">
+<meta property="og:url" content="https://dnanye.gitee.io/2022/09/08/algs01/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="序言​        本系列主要以Robert Sedgewich编著的《算法（第四版）》为蓝本用C++和JAVA这两门语言分别进行实现并将作者自己的思考与LeetCode题目作为补充，如有疏漏还请大佬指正。 ​		数据结构和算法这门课程作为计算机相关专业的专业课，并且被列为四大件之一（数据结构和算法、设计模式、计算机网络、计算机操作系统）其重要程度就无须再提了。 ​		而我们用上面所说的书作为本">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://dnanye.gitee.io/home/nanye/blog/source/picture/ll%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.jpg">
+<meta property="og:image" content="https://dnanye.gitee.io/home/nanye/blog/source/picture/%E7%A7%BB%E5%8A%A8%E5%90%8E%E7%9A%84%E7%BB%93%E6%9E%9C.jpg">
+<meta property="og:image" content="https://dnanye.gitee.io/home/nanye/blog/source/picture/export%E6%83%85%E5%86%B5.jpg">
+<meta property="og:image" content="https://dnanye.gitee.io/home/nanye/blog/source/picture/javac%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.jpg">
+<meta property="og:image" content="https://dnanye.gitee.io/home/nanye/blog/source/picture/java%E7%BB%93%E6%9E%9C.jpg">
+<meta property="article:published_time" content="2022-09-08T08:39:59.000Z">
+<meta property="article:modified_time" content="2022-09-08T09:03:38.940Z">
+<meta property="article:author" content="nanye">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="JAVA">
+<meta property="article:tag" content="C++">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://dnanye.gitee.io/home/nanye/blog/source/picture/ll%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.jpg">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://dnanye.gitee.io/2022/09/08/algs01/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/dnaye" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">无佢</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">我怎么能成为你一个人的博主呢？不行！不行！（也不是不可以！）</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> SuZhou, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/dnanye" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://gitee.com/dnanye" target="_blank" title="Gitee" data-toggle=tooltip data-placement=top><i class="icon icon-gitee"></i></a></li>
+        
+        <li><a href="https://m.weibo.cn/profile/6013892152" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/" rel="tag">JAVA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/C/" style="font-size: 13px;">C++</a> <a href="/tags/JAVA/" style="font-size: 13px;">JAVA</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 13px;">算法</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/09/08/algs01/" class="title">导论</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-09-08T08:39:59.000Z" itemprop="datePublished">2022-09-08</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2022/09/07/article-name/" class="title">article_name</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-09-07T14:23:08.000Z" itemprop="datePublished">2022-09-07</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-algs01" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      导论
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/09/08/algs01/" class="article-date">
+	  <time datetime="2022-09-08T08:39:59.000Z" itemprop="datePublished">2022-09-08</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/C/" rel="tag">C++</a>, <a class="article-tag-link-link" href="/tags/JAVA/" rel="tag">JAVA</a>, <a class="article-tag-link-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/09/08/algs01/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h1><p>​        本系列主要以<em>Robert Sedgewich</em>编著的<em><strong>《算法（第四版）》</strong></em>为蓝本用<em>C++<em>和</em>JAVA</em>这两门语言分别进行实现并将作者自己的思考与<em>LeetCode</em>题目作为补充，如有疏漏还请大佬指正。</p>
+<p>​		数据结构和算法这门课程作为计算机相关专业的专业课，并且被列为四大件之一（数据结构和算法、设计模式、计算机网络、计算机操作系统）其重要程度就无须再提了。</p>
+<p>​		而我们用上面所说的书作为本次讲述的范本主要是其简单易懂的原因，并且提供了大量的工具类使我们无需考虑算法以外的编程问题。</p>
+<p>​		以下介绍一下本系列博文的一些基本情况:</p>
+<ol>
+<li><p><strong>操作系统</strong><br>本系列使用操作系统的是<em>Ubuntu 20.4</em>系统，若你的操作系统和本人的操作系统有差异，可以到网上去找相应的文章进行阅读，而后配置好自己的开发环境，在用该博文进行针对性的学习；如果你的操作系统与本人相同那么你可以跟着我的步骤来，我会从最简单的jdk和g++安装进行操作。</p>
+</li>
+<li><p><strong>语言部分</strong><br>我们采用的是JAVA和C++进行编程的原因是：二者都是面向对象的编程语言，在《算法》那本书的示例均采用JAVA进行编写，其中该书有着自己封装好的一些功能代码，只需要我们根据官方的API进行简单地调用即可。<br>我们如若要从C++进行编程，那么一些功能代码必须自己进行编写，这一部分笔者将会在后面进行阐述，在此便不再赘述。</p>
+</li>
+<li><p><strong>相关资源</strong><br><em>《算法（第四版）》</em>这本书的配套资源：<br><a target="_blank" rel="noopener" href="https://algs4.cs.princeton.edu/code">算法第四版官方网站（含资源）</a></p>
+</li>
+</ol>
+<h1 id="开发环境配置"><a href="#开发环境配置" class="headerlink" title="开发环境配置"></a>开发环境配置</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">1. 进入主目录当中</span><br><span class="line">[username:~/]$</span><br><span class="line"></span><br><span class="line">2. 进入root权限</span><br><span class="line">[username:~/]$ sudo su</span><br><span class="line"></span><br><span class="line">3. 创建java安装文件夹</span><br><span class="line">[username #] mkdir /usr/local/java</span><br><span class="line"></span><br><span class="line">4. 下载jdk-open</span><br><span class="line">[username #]sudo apt-get install openjdk-8-jdk</span><br><span class="line"></span><br><span class="line">5. 测试javac是否安装成功</span><br><span class="line"><span class="meta prompt_">[username#</span><span class="language-bash">] javac -version</span></span><br><span class="line">javac 1.8.0_342</span><br><span class="line"></span><br><span class="line">6. ava是否安装成功</span><br><span class="line"><span class="meta prompt_">[username#</span><span class="language-bash">] java -version</span></span><br><span class="line">openjdk version &quot;1.8.0_342&quot;</span><br><span class="line">OpenJDK Runtime Environment (build 1.8.0_342-8u342-b07-0ubuntu1~20.04-b07)</span><br><span class="line">OpenJDK 64-Bit Server VM (build 25.342-b07, mixed mode)</span><br><span class="line"></span><br><span class="line">7.创建文件夹</span><br><span class="line"><span class="meta prompt_">[username#</span><span class="language-bash">] <span class="built_in">cd</span> /usr/local</span></span><br><span class="line"><span class="meta prompt_">[username#</span><span class="language-bash">] <span class="built_in">mkdir</span> alg4</span></span><br><span class="line"></span><br><span class="line">8. 分配权限</span><br><span class="line"><span class="meta prompt_">[username#</span><span class="language-bash">] <span class="built_in">chmod</span> 755 algs4</span></span><br><span class="line"></span><br><span class="line">9. 进入文件夹</span><br><span class="line"><span class="meta prompt_">[username#</span><span class="language-bash">] <span class="built_in">cd</span> algs4</span></span><br><span class="line"><span class="meta prompt_">[username#</span><span class="language-bash">] <span class="built_in">pwd</span></span></span><br><span class="line">/usr/local/algs4</span><br><span class="line"></span><br><span class="line">10. 下载alg4.jar包及有关jar包</span><br><span class="line"><span class="meta prompt_">[username#</span><span class="language-bash">] curl -O <span class="string">&quot;https://algs4.cs.princeton.edu/code/algs4.jar&quot;</span></span></span><br><span class="line"><span class="meta prompt_">[username#</span><span class="language-bash">] curl -O <span class="string">&quot;https://algs4.cs.princeton.edu/linux/&#123;javac,java&#125;-&#123;algs4,cos226,coursera&#125;&quot;</span></span></span><br><span class="line"></span><br><span class="line">11. 查看下载情况</span><br><span class="line"><span class="meta prompt_">[username#</span><span class="language-bash">] ll</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/home/nanye/blog/source/picture/ll%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.jpg" alt="alg4.jar及相关包的下载情况"></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">12. 分配权限并将相关文件移动至/usr/local/bin,使全局均可使用javac-algs4、javac-algs4</span><br><span class="line"><span class="meta prompt_">[username#</span><span class="language-bash">]  <span class="built_in">chmod</span> 755 &#123;javac,java&#125;-&#123;algs4,cos226,coursera&#125;</span></span><br><span class="line"><span class="meta prompt_">[username#</span><span class="language-bash">]  <span class="built_in">mv</span> &#123;javac,java&#125;-&#123;algs4,cos226,coursera&#125; /usr/local/bin</span></span><br><span class="line"></span><br><span class="line">13. 移动后的alg4的文件夹</span><br></pre></td></tr></table></figure>
+
+<p><img src="/home/nanye/blog/source/picture/%E7%A7%BB%E5%8A%A8%E5%90%8E%E7%9A%84%E7%BB%93%E6%9E%9C.jpg" alt="移动后的结果"></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">14. [username#] exit	   #退出root</span><br><span class="line"></span><br><span class="line">15.Linux下运行《算法（第四版）》的环境配置</span><br><span class="line">[username:~/]export CLASSPATH=$CLASSPATH:&quot;/usr/local/algs4/algs4.jar&quot;		#设置环境变量，&quot;&quot;当中为algs4.jar的文件绝对路径，该命令在退出该shell后，需要重新设置。如果想要一直生效可在/etc/profile文件里面进行修改</span><br><span class="line"></span><br><span class="line">16. 查看是否配置成功</span><br><span class="line">[username:~/]export -p</span><br></pre></td></tr></table></figure>
+
+<p>   <img src="/home/nanye/blog/source/picture/export%E6%83%85%E5%86%B5.jpg" alt="export -p情况"></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">17. 创建自己的工作目录</span><br><span class="line">[username:~/]$ mkdir code</span><br><span class="line">[username:~/]$ cd code</span><br><span class="line">[username:~/code]$ mkdir algs4</span><br><span class="line">[username:~/code]$ cd alg4</span><br><span class="line">[username:~/code/algs4]$ mkdir java		#java实现</span><br><span class="line">[username:~/code/algs4]$ mkdir c++		#c++实现，环境未配置</span><br><span class="line">[username:~/code/algs4]$ cd java</span><br><span class="line">[username:~/code/algs4/java]$</span><br><span class="line"></span><br><span class="line">18. 创建测试代码，测试自己的环境是否配置成功</span><br><span class="line">[username:~/code/algs4/java]$ vim BinarySeach.java	#二分查找</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"><span class="keyword">import</span> edu.princeton.cs.algs4.StdOut;</span><br><span class="line"><span class="keyword">import</span> edu.princeton.cs.algs4.StdIn;</span><br><span class="line"><span class="keyword">import</span> edu.princeton.cs.algs4.In;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">BinarySearch</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">rank</span><span class="params">(<span class="type">int</span> key,<span class="type">int</span>[] a)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">lo</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">hi</span> <span class="operator">=</span> a.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(lo &lt;= hi)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//被查找的键要么不存在，要么必然存在与a[lo..hi]中</span></span><br><span class="line">            <span class="type">int</span> <span class="variable">mid</span> <span class="operator">=</span> lo + (hi-lo) / <span class="number">2</span> ;</span><br><span class="line">            <span class="keyword">if</span>  (key &lt; a[mid])          hi = mid - <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(key &gt; a[mid])       lo = mid + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span>                        <span class="keyword">return</span> mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span>[] whitelist = In.readInts(args[<span class="number">0</span>]); <span class="comment">//从命令行获取文件当中的整数</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">key</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        Arrays.sort(whitelist);</span><br><span class="line">        <span class="keyword">while</span>(!StdIn.isEmpty())</span><br><span class="line">        &#123;</span><br><span class="line">                 key  = StdIn.readInt();		<span class="comment">//从重定向后的StdIn中读取一个int值,后续介绍，在此不多介绍</span></span><br><span class="line">                <span class="keyword">if</span>(rank(key,whitelist) &lt; <span class="number">0</span>)		<span class="comment">//若未在whitelist找到key时</span></span><br><span class="line">                StdOut.println(key);			<span class="comment">//将该值打印并换行</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">18. 创建测试代码，测试自己的环境是否配置成功(出现警告，无需理会)</span><br><span class="line">[username:~/code/algs4/java]$ javac-algs4 BinarySearch.java		#不要直接用jdk自带的javac,会报错</span><br></pre></td></tr></table></figure>
+
+<p><img src="/home/nanye/blog/source/picture/javac%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.jpg" alt="javac运行结果"></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">19.运行一下看一下结果，tinyW.txt和tinyT.txt可以自己创建，也可以使用官方的。</span><br><span class="line">[username:~/code/algs4/java]$ java-algs4 BinarySearch tinyW.txt &lt;tinyT.txt		#使用的是官方的数据</span><br></pre></td></tr></table></figure>
+
+<p><img src="/home/nanye/blog/source/picture/java%E7%BB%93%E6%9E%9C.jpg" alt="java结果"></p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://dnanye.gitee.io/2022/09/08/algs01/" title="导论" target="_blank" rel="external">https://dnanye.gitee.io/2022/09/08/algs01/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/dnaye" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/dnaye" target="_blank"><span class="text-dark">无佢</span><small class="ml-1x">我怎么能成为你一个人的博主呢？不行！不行！（也不是不可以！）</small></a></h3>
+        <div></div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2022/09/07/article-name/" title="article_name"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/dnanye" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://gitee.com/dnanye" target="_blank" title="Gitee" data-toggle=tooltip data-placement=top><i class="icon icon-gitee"></i></a></li>
+        
+        <li><a href="https://m.weibo.cn/profile/6013892152" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>
