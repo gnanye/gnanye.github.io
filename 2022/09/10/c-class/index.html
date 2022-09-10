@@ -17,22 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>C#语法基础 | Hexo</title>
-  <meta name="description" content="语法基础本部分重点指出C#不同于C语言之间不同的部分，相同部分会一句带过，如果有不明白的地方请看《C Primer Plus》，在此不再赘述了。 2.1 数据类型 C#的数据类型分为值类型与引用数据类型 2.1.1 值类型 整型     数据类型 标识符 范围    字节 sbyte -128~127   无符号字节 byte 0~255   短整型 short -32768~32767   无符">
+  <title>C#当中的类和对象 | Hexo</title>
+  <meta name="description" content="在C#需要使用对象进行编程实现时，我们需要将该对象的类给定义出来，毕竟类定义了每个对象应该有的什么属性（这里的属性和下文的属性不一样，这里的属性是指实体对象应当具有的特性）和什么动作。 创建新类的语法如下： 123456789101112131415[访问修饰符] class 类名&amp;#123;    [访问修饰符] &lt;数据类型&gt; 数据成员；	&#x2F;&#x2F;字段，这里和java的名称不一样在jav">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C#语法基础">
-<meta property="og:url" content="https://dnanye.gitee.io/2022/09/10/C-%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:title" content="C#当中的类和对象">
+<meta property="og:url" content="https://dnanye.gitee.io/2022/09/10/c-class/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="语法基础本部分重点指出C#不同于C语言之间不同的部分，相同部分会一句带过，如果有不明白的地方请看《C Primer Plus》，在此不再赘述了。 2.1 数据类型 C#的数据类型分为值类型与引用数据类型 2.1.1 值类型 整型     数据类型 标识符 范围    字节 sbyte -128~127   无符号字节 byte 0~255   短整型 short -32768~32767   无符">
+<meta property="og:description" content="在C#需要使用对象进行编程实现时，我们需要将该对象的类给定义出来，毕竟类定义了每个对象应该有的什么属性（这里的属性和下文的属性不一样，这里的属性是指实体对象应当具有的特性）和什么动作。 创建新类的语法如下： 123456789101112131415[访问修饰符] class 类名&amp;#123;    [访问修饰符] &lt;数据类型&gt; 数据成员；	&#x2F;&#x2F;字段，这里和java的名称不一样在jav">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-09-10T01:56:23.000Z">
-<meta property="article:modified_time" content="2022-09-10T02:10:44.887Z">
+<meta property="article:published_time" content="2022-09-10T09:43:36.000Z">
+<meta property="article:modified_time" content="2022-09-10T09:49:24.663Z">
 <meta property="article:author" content="nanye">
 <meta property="article:tag" content="C#">
-<meta property="article:tag" content=".NET FrameWork">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://dnanye.gitee.io/2022/09/10/C-%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/index.html">
+  <link rel="canonical" href="https://dnanye.gitee.io/2022/09/10/c-class/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -290,14 +289,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-C-语法基础" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-c-class" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      C#语法基础
+      C#当中的类和对象
     </h1>
   
 
@@ -305,8 +304,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2022/09/10/C-%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/" class="article-date">
-	  <time datetime="2022-09-10T01:56:23.000Z" itemprop="datePublished">2022-09-10</time>
+	<a href="/2022/09/10/c-class/" class="article-date">
+	  <time datetime="2022-09-10T09:43:36.000Z" itemprop="datePublished">2022-09-10</time>
 	</a>
 </span>
         
@@ -318,146 +317,38 @@
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/NET-FrameWork/" rel="tag">.NET FrameWork</a>, <a class="article-tag-link-link" href="/tags/C/" rel="tag">C#</a>
+	<a class="article-tag-link-link" href="/tags/C/" rel="tag">C#</a>
   </span>
 
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/09/10/C-%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/09/10/c-class/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="语法基础"><a href="#语法基础" class="headerlink" title="语法基础"></a>语法基础</h1><p>本部分重点指出<em><strong>C#<em><strong>不同于</strong></em>C</strong></em>语言之间不同的部分，相同部分会一句带过，如果有不明白的地方请看<em><strong>《C Primer Plus》</strong></em>，在此不再赘述了。</p>
-<h2 id="2-1-数据类型"><a href="#2-1-数据类型" class="headerlink" title="2.1 数据类型"></a>2.1 数据类型</h2><p> C#的数据类型分为值类型与引用数据类型</p>
-<h3 id="2-1-1-值类型"><a href="#2-1-1-值类型" class="headerlink" title="2.1.1 值类型"></a>2.1.1 值类型</h3><ol>
-<li>整型</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>数据类型</th>
-<th>标识符</th>
-<th>范围</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>字节</td>
-<td>sbyte</td>
-<td>-128~127</td>
-</tr>
-<tr>
-<td>无符号字节</td>
-<td>byte</td>
-<td>0~255</td>
-</tr>
-<tr>
-<td>短整型</td>
-<td>short</td>
-<td>-32768~32767</td>
-</tr>
-<tr>
-<td>无符号短整型</td>
-<td>ushort</td>
-<td>0~65535</td>
-</tr>
-<tr>
-<td>整型</td>
-<td>int</td>
-<td>-2147483648~2147483647</td>
-</tr>
-<tr>
-<td>无符号整型</td>
-<td>uint</td>
-<td>0~2147483647*2+1</td>
-</tr>
-<tr>
-<td>长整形</td>
-<td>long</td>
-<td>-~+</td>
-</tr>
-<tr>
-<td>无符号整型</td>
-<td>ulong</td>
-<td>0~+</td>
-</tr>
-</tbody></table>
-<ol start="2">
-<li><p>浮点型</p>
-<p>单精度				float</p>
-</li>
-</ol>
-<p>​		双精度			double</p>
-<p>​       十进制实数	decimal       字节数为16</p>
-<pre><code>3. 字符型char			ASCII、Unicode编程字符、转义字符
+        <p>在C#需要使用对象进行编程实现时，我们需要将该对象的类给定义出来，毕竟类定义了每个对象应该有的什么属性（这里的属性和下文的属性不一样，这里的属性是指实体对象应当具有的特性）和什么动作。</p>
+<p>创建新类的语法如下：</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[访问修饰符] <span class="keyword">class</span> 类名</span><br><span class="line">&#123;</span><br><span class="line">    [访问修饰符] &lt;数据类型&gt; 数据成员；	<span class="comment">//字段，这里和java的名称不一样在java当中称为属性</span></span><br><span class="line">    [访问修饰符] &lt;返回值类型&gt; 方法名；    <span class="comment">//成员函数</span></span><br><span class="line">     <span class="comment">/*...</span></span><br><span class="line"><span class="comment">     除了定义以上两种成员意外我们还可以定义</span></span><br><span class="line"><span class="comment">     事件</span></span><br><span class="line"><span class="comment">     嵌套类</span></span><br><span class="line"><span class="comment">     属性（这个和java的不一样啊！！！）</span></span><br><span class="line"><span class="comment">     构造函数（很重要）</span></span><br><span class="line"><span class="comment">     析构函数</span></span><br><span class="line"><span class="comment">     ....</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">        </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-   4. 布尔型（bool)     true\false
-   5. 结构类型struct
-   6. 枚举类型enum
-</code></pre>
-<h3 id="2-1-2-引用类型"><a href="#2-1-2-引用类型" class="headerlink" title="2.1.2 引用类型"></a>2.1.2 引用类型</h3><p>在引用类型当中，不会直接存储数值，而是存储实际数值的<strong>引用（地址）</strong></p>
-<p>C#的引用类型分为数组、类、接口、委托、内置引用类型、字符串</p>
-<p>​	<strong>1. 数组</strong></p>
-<p>作用：将一批类型相同的数据元素存储到一块连续的内存块中，每个元素对应有一个唯一的索引。</p>
-<p>声明一维数组：</p>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">baseType[] arrayName;		<span class="comment">//baseType为数组类型，可以是值类型，也可以是引用类型</span></span><br><span class="line"><span class="comment">//例：</span></span><br><span class="line"><span class="built_in">int</span> [] array;				<span class="comment">//为int类型数组</span></span><br><span class="line"><span class="built_in">string</span>[] s1;				<span class="comment">//为string类型数组</span></span><br><span class="line">Animal [] animalArr;		<span class="comment">//为类类型的数组</span></span><br></pre></td></tr></table></figure>
+<p>访问修饰符指定了类和其成员的访问权限规则，不指定则使用默认权限,修饰符有以下几种</p>
+<p><em><strong>public</strong></em>: 公有访问，可以被是由任意程序集访问</p>
+<p><em><strong>private</strong></em>: 私有访问，仅限本类成员（数据成员与方法成员访问）</p>
+<p><em><strong>internal</strong></em>：内部访问，在该程序集里的所有类均可访问</p>
+<p><em><strong>protected</strong></em>: 受保护访问，仅能由本类与该类的派生类访问。</p>
+<p>下面我们做一下举例：</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> 	<span class="keyword">class</span>	<span class="title">People</span>			<span class="comment">//创建“人”这个类</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span>	name;<span class="comment">//姓名</span></span><br><span class="line">	<span class="keyword">public</span> <span class="built_in">int</span> 		age;<span class="comment">//年龄</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> 		sex;<span class="comment">//性别</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span>		ID;<span class="comment">//ID号码</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//方法体（略）</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">	   	<span class="keyword">class</span>	<span class="title">Dog</span>				<span class="comment">//默认的访问修饰符为internal</span></span><br><span class="line">        &#123;</span><br><span class="line">         	<span class="keyword">public</span> <span class="built_in">string</span> name;</span><br><span class="line">            <span class="keyword">public</span> <span class="built_in">int</span> age;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> run</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">//...</span></span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">internal</span> Date<span class="comment">//是不是觉得很怪，但是它是表示protected or internal</span></span><br><span class="line">&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>定义一维数组（实例化数组）：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int [] array=new int[5];</span><br><span class="line">int [] array1=&#123;1,2,3,4&#125;;</span><br></pre></td></tr></table></figure>
+<p>看到<em><strong>class</strong></em>的定义你是否会想到<em><strong>C</strong></em>语言里面的结构体，想道它是否可以像<em><strong>C++<em><strong>那样用于定义类呢？其实</strong></em>class</strong></em>和<em><strong>struct</strong></em>可以用于创建对象，只不过<em><strong>struct</strong></em>创建的对象分布在<strong>栈</strong>上，<em><strong>class</strong></em>创建的对象则托管在<strong>堆</strong>上面。</p>
+<p>好了，我们已经知道了如何定义一个模板，那么我们如何根据模板创建一个实例呢？就像我们到餐厅点餐一样，我们知道了菜单。</p>
+<p>如何将菜单上的菜转换为一道可以食用的菜呢？不可能将菜单当作实物吃了吧！这时就想要让服务员告诉后厨我们需要的菜，并且后厨开始准备我们的菜，然后菜做好后让服务员从后厨端上来！</p>
+<p>这个过程就是<strong>实例化对象</strong>的过程，我们现在不对这个过程进行讲解，只要告诉你一个实例化对象的方法：使用<em><strong>new</strong></em>运算符就可实现。<del>所以编程圈里面有个笑话，找不到对象怎么办，new一个对象出来就行了</del></p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Date date=<span class="keyword">new</span> Date();	</span><br></pre></td></tr></table></figure>
 
-<p>获取数组长度</p>
-<p>通过Array类的<em><strong>length</strong></em>属性即可得到</p>
-<p>二维数组：每个数组元素均由n个该类型发数据构成。</p>
-<p>定义：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">baseType[,] array=new baseType[N1,N2];</span><br></pre></td></tr></table></figure>
-
-
-
-<p>​    <strong>2. 字符串</strong></p>
-<p>类型关键字为string,声明一个string类型数据，其实就是在内存空间创建了一个空的引用关系。</p>
-<p>初始化一个字符串，相当于引用了多个字符类型的数据</p>
-<h3 id="2-1-3-类型转换"><a href="#2-1-3-类型转换" class="headerlink" title="2.1.3 类型转换"></a>2.1.3 类型转换</h3><p><strong>1.隐式转换（编译器直接转换）</strong></p>
-<p>值类型到值类型的一般转换（例如float–&gt;double等等)在此不多赘述，我们需要了解的是将值类型到引用类型的转换。</p>
-<p>装箱就是自动将基本数据类型转换为引用类型，拆箱就是自动将引用类型转换为基本数据类型（在java当中非常有用的一个功能）</p>
-<p>例如要将值类型转换为object类型，可以创建一个基于该值类型的object实例。</p>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">char</span> chData=<span class="string">&#x27;a&#x27;</span>;</span><br><span class="line"><span class="built_in">object</span> obj=ch;</span><br><span class="line">Console.WriteLine(obj);	<span class="comment">//输出a</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>2.显式转换（用户直接转换）</strong></p>
-<p>值类型的：</p>
-<p>（类型名）（表达式）</p>
-<p>拆箱：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int a=1;</span><br><span class="line">object obj=a;</span><br><span class="line">int intA=(int)obj;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>使用<em><strong>Convert</strong></em>命令显示转换，例如<em><strong>Convert.ToBoolean(value);</strong></em></p>
-<h2 id="2-2-变量与常量-略"><a href="#2-2-变量与常量-略" class="headerlink" title="2.2 变量与常量(略)"></a>2.2 变量与常量(略)</h2><p>这个东西哪个语言都差不多，不想再说了-____-</p>
-<h2 id="2-3-语句"><a href="#2-3-语句" class="headerlink" title="2.3 语句"></a>2.3 语句</h2><p>只列一下语句的类型</p>
-<p><strong>1.表达式语句</strong>（算术、赋值、关系、逻辑、位等运算）</p>
-<p><strong>2.流程控制语句</strong>（if\else、switch、while\do…while、for、foreach（用于遍历数组）、循环中断【break\continue\goto】)</p>
-<p>这里重点提一下foreach语句：</p>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> [] arr=<span class="keyword">new</span> <span class="built_in">int</span>[<span class="number">5</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="built_in">int</span> i=<span class="number">0</span>;i&lt;arr.length;i++)</span><br><span class="line">&#123;</span><br><span class="line">    arr[i]=i;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">int</span> j=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">foreach</span>(<span class="built_in">int</span> i <span class="keyword">in</span> arr)			<span class="comment">//i代替了arr当中的每个元素的变量名，它会自动遍历所有的元素，直到遍历完成</span></span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;array[&#123;0&#125;]=&#123;1&#125;&quot;</span>,j++,i);		</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p> <strong>3.异常处理语句</strong></p>
-<p>在程序运行过程中，经常遇到错误而中断而中断程序的运行，这种情况叫做异常。</p>
-<p>在.NET Framework中，异常的基类（后面在继承会说明这个概念）为Exception.</p>
-<p>处理异常的语句有<em><strong>try…catch</strong></em>、<em><strong>throw</strong></em>、<em><strong>finally</strong></em>(这个语句和大多数面向对象编程语言一致)</p>
-<p>throw语句在特点情况下自动抛出异常，基本格式为</p>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">throw</span> expresion			<span class="comment">//expresion表示抛出的异常类型的对象（派生至System.Exception类的对象）</span></span><br></pre></td></tr></table></figure>
-
-<p>当 throw 语句执行时，它后面的语句将不执行，此时程序转向调用者程序，寻找与之相匹配的 catch 语句，执行相应的异常处理程序。如果没有找到相匹配的 catch 语句，则再转向上一层的调用程序。这样逐层向上，直到最外层的异常处理程序终止程序并打印出调用栈情况。</p>
-<p><em><strong>try…catch</strong></em>有三种形式：<em><strong>try</strong></em>后面跟一个或多个<em><strong>catch</strong></em>块；一个<em><strong>try</strong></em>块后接一个<em><strong>finally块</strong></em>，<em><strong>try</strong></em>后面跟一个或多个<em><strong>catch</strong></em>块后接一个<em><strong>finally块</strong></em></p>
-<h2 id="2-4-随机数"><a href="#2-4-随机数" class="headerlink" title="2.4 随机数"></a>2.4 随机数</h2><p>一般情况下我们使用都是<em><strong>伪随机数</strong></em>，它是由特定算法生成的随机数系列，并不是真正的随机数，但是有着随机数的一般性质。生成随机数需要给定随机种子，如果随机种子不变，生成的伪随机的数序也不会改变。在计算机当中往往采用伪随机数代替真正的随机数。</p>
-<p>1、生成随机整数：</p>
-<p>使用<em><strong>Rondom</strong></em>类创建对象，调用.Next()重载方法（方法的重载后面会讲，这里只需要知道重载就是方法的名字一样，参数类型或数目不一样）时，可以产生一个指定范围的随机整数。可以分为以下几种重载情况：</p>
-<p><em><strong>.Next()</strong></em>:系统以当前时间为随机数种子，返回一个非负随机整数</p>
-<p><em><strong>.Next(int maxValue)</strong></em>:系统以当前时间为随机数种子,返回一个0-~maxValue-1的随机整数</p>
-<p><em><strong>.Next(int minValue,int maxValue)</strong></em>:系统以当前时间为随机数种子,返回一个minValue~maxValue的随机整数。</p>
-<p>而当Random.NextDouble()接受double数据后，会与上述的方法差不多，只是返回值与形参变为了double了罢。</p>
+<p>date是Date对象的名字，它到底存储的是什么我没找到答案，如果按照之前说的它是JAVA、C++等语言的集合体，那么我们可以推断其保存的是指向该对象的指针或引用。</p>
+<p>实例化对象的实质是在内存当中开辟一块内存（如果使用的是<em><strong>class</strong></em>,在堆内存存储，如果使用的是<em><strong>struct</strong></em>则在栈内存储）存储对象的字段和方法，而<strong>类则不会开辟内存，只有将类实例化为对象才会开辟对象。</strong></p>
 
       
     </div>
@@ -467,7 +358,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://dnanye.gitee.io/2022/09/10/C-%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/" title="C#语法基础" target="_blank" rel="external">https://dnanye.gitee.io/2022/09/10/C-语法基础/</a>
+      <a href="https://dnanye.gitee.io/2022/09/10/c-class/" title="C#当中的类和对象" target="_blank" rel="external">https://dnanye.gitee.io/2022/09/10/c-class/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -513,13 +404,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2022/09/10/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="面向对象"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2022/09/10/C-%E6%A6%82%E8%BF%B0/" title="c#概述"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2022/09/10/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="面向对象"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
