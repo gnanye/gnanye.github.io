@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>C#语法基础 | Hexo</title>
+  <meta name="description" content="语法基础本部分重点指出C#不同于C语言之间不同的部分，相同部分会一句带过，如果有不明白的地方请看《C Primer Plus》，在此不再赘述了。 2.1 数据类型 C#的数据类型分为值类型与引用数据类型 2.1.1 值类型 整型     数据类型 标识符 范围    字节 sbyte -128~127   无符号字节 byte 0~255   短整型 short -32768~32767   无符">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C#语法基础">
+<meta property="og:url" content="https://dnanye.gitee.io/2022/09/10/C-%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="语法基础本部分重点指出C#不同于C语言之间不同的部分，相同部分会一句带过，如果有不明白的地方请看《C Primer Plus》，在此不再赘述了。 2.1 数据类型 C#的数据类型分为值类型与引用数据类型 2.1.1 值类型 整型     数据类型 标识符 范围    字节 sbyte -128~127   无符号字节 byte 0~255   短整型 short -32768~32767   无符">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-09-10T01:56:23.000Z">
+<meta property="article:modified_time" content="2022-09-10T02:10:44.887Z">
+<meta property="article:author" content="nanye">
+<meta property="article:tag" content="C#">
+<meta property="article:tag" content=".NET FrameWork">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://dnanye.gitee.io/2022/09/10/C-%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/dnaye" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">无佢</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">我怎么能成为你一个人的博主呢？不行！不行！（也不是不可以！）</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> SuZhou, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/dnanye" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://gitee.com/dnanye" target="_blank" title="Gitee" data-toggle=tooltip data-placement=top><i class="icon icon-gitee"></i></a></li>
+        
+        <li><a href="https://m.weibo.cn/profile/6013892152" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C#</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/NET-FrameWork/" rel="tag">.NET FrameWork</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C#</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/NET-FrameWork/" style="font-size: 13px;">.NET FrameWork</a> <a href="/tags/C/" style="font-size: 13px;">C#</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/C/">C#</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/09/10/C-%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/" class="title">C#语法基础</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-09-10T01:56:23.000Z" itemprop="datePublished">2022-09-10</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/C/">C#</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/09/10/c-%E6%A6%82%E8%BF%B0/" class="title">c#概述</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-09-10T01:44:22.000Z" itemprop="datePublished">2022-09-10</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-C-语法基础" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      C#语法基础
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/09/10/C-%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/" class="article-date">
+	  <time datetime="2022-09-10T01:56:23.000Z" itemprop="datePublished">2022-09-10</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/C/">C#</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/NET-FrameWork/" rel="tag">.NET FrameWork</a>, <a class="article-tag-link-link" href="/tags/C/" rel="tag">C#</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/09/10/C-%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="语法基础"><a href="#语法基础" class="headerlink" title="语法基础"></a>语法基础</h1><p>本部分重点指出<em><strong>C#<em><strong>不同于</strong></em>C</strong></em>语言之间不同的部分，相同部分会一句带过，如果有不明白的地方请看<em><strong>《C Primer Plus》</strong></em>，在此不再赘述了。</p>
+<h2 id="2-1-数据类型"><a href="#2-1-数据类型" class="headerlink" title="2.1 数据类型"></a>2.1 数据类型</h2><p> C#的数据类型分为值类型与引用数据类型</p>
+<h3 id="2-1-1-值类型"><a href="#2-1-1-值类型" class="headerlink" title="2.1.1 值类型"></a>2.1.1 值类型</h3><ol>
+<li>整型</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>标识符</th>
+<th>范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>字节</td>
+<td>sbyte</td>
+<td>-128~127</td>
+</tr>
+<tr>
+<td>无符号字节</td>
+<td>byte</td>
+<td>0~255</td>
+</tr>
+<tr>
+<td>短整型</td>
+<td>short</td>
+<td>-32768~32767</td>
+</tr>
+<tr>
+<td>无符号短整型</td>
+<td>ushort</td>
+<td>0~65535</td>
+</tr>
+<tr>
+<td>整型</td>
+<td>int</td>
+<td>-2147483648~2147483647</td>
+</tr>
+<tr>
+<td>无符号整型</td>
+<td>uint</td>
+<td>0~2147483647*2+1</td>
+</tr>
+<tr>
+<td>长整形</td>
+<td>long</td>
+<td>-~+</td>
+</tr>
+<tr>
+<td>无符号整型</td>
+<td>ulong</td>
+<td>0~+</td>
+</tr>
+</tbody></table>
+<ol start="2">
+<li><p>浮点型</p>
+<p>单精度				float</p>
+</li>
+</ol>
+<p>​		双精度			double</p>
+<p>​       十进制实数	decimal       字节数为16</p>
+<pre><code>3. 字符型char			ASCII、Unicode编程字符、转义字符
+
+   4. 布尔型（bool)     true\false
+   5. 结构类型struct
+   6. 枚举类型enum
+</code></pre>
+<h3 id="2-1-2-引用类型"><a href="#2-1-2-引用类型" class="headerlink" title="2.1.2 引用类型"></a>2.1.2 引用类型</h3><p>在引用类型当中，不会直接存储数值，而是存储实际数值的<strong>引用（地址）</strong></p>
+<p>C#的引用类型分为数组、类、接口、委托、内置引用类型、字符串</p>
+<p>​	<strong>1. 数组</strong></p>
+<p>作用：将一批类型相同的数据元素存储到一块连续的内存块中，每个元素对应有一个唯一的索引。</p>
+<p>声明一维数组：</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">baseType[] arrayName;		<span class="comment">//baseType为数组类型，可以是值类型，也可以是引用类型</span></span><br><span class="line"><span class="comment">//例：</span></span><br><span class="line"><span class="built_in">int</span> [] array;				<span class="comment">//为int类型数组</span></span><br><span class="line"><span class="built_in">string</span>[] s1;				<span class="comment">//为string类型数组</span></span><br><span class="line">Animal [] animalArr;		<span class="comment">//为类类型的数组</span></span><br></pre></td></tr></table></figure>
+
+<p>定义一维数组（实例化数组）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int [] array=new int[5];</span><br><span class="line">int [] array1=&#123;1,2,3,4&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>获取数组长度</p>
+<p>通过Array类的<em><strong>length</strong></em>属性即可得到</p>
+<p>二维数组：每个数组元素均由n个该类型发数据构成。</p>
+<p>定义：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">baseType[,] array=new baseType[N1,N2];</span><br></pre></td></tr></table></figure>
+
+
+
+<p>​    <strong>2. 字符串</strong></p>
+<p>类型关键字为string,声明一个string类型数据，其实就是在内存空间创建了一个空的引用关系。</p>
+<p>初始化一个字符串，相当于引用了多个字符类型的数据</p>
+<h3 id="2-1-3-类型转换"><a href="#2-1-3-类型转换" class="headerlink" title="2.1.3 类型转换"></a>2.1.3 类型转换</h3><p><strong>1.隐式转换（编译器直接转换）</strong></p>
+<p>值类型到值类型的一般转换（例如float–&gt;double等等)在此不多赘述，我们需要了解的是将值类型到引用类型的转换。</p>
+<p>装箱就是自动将基本数据类型转换为引用类型，拆箱就是自动将引用类型转换为基本数据类型（在java当中非常有用的一个功能）</p>
+<p>例如要将值类型转换为object类型，可以创建一个基于该值类型的object实例。</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">char</span> chData=<span class="string">&#x27;a&#x27;</span>;</span><br><span class="line"><span class="built_in">object</span> obj=ch;</span><br><span class="line">Console.WriteLine(obj);	<span class="comment">//输出a</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>2.显式转换（用户直接转换）</strong></p>
+<p>值类型的：</p>
+<p>（类型名）（表达式）</p>
+<p>拆箱：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int a=1;</span><br><span class="line">object obj=a;</span><br><span class="line">int intA=(int)obj;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>使用<em><strong>Convert</strong></em>命令显示转换，例如<em><strong>Convert.ToBoolean(value);</strong></em></p>
+<h2 id="2-2-变量与常量-略"><a href="#2-2-变量与常量-略" class="headerlink" title="2.2 变量与常量(略)"></a>2.2 变量与常量(略)</h2><p>这个东西哪个语言都差不多，不想再说了-____-</p>
+<h2 id="2-3-语句"><a href="#2-3-语句" class="headerlink" title="2.3 语句"></a>2.3 语句</h2><p>只列一下语句的类型</p>
+<p><strong>1.表达式语句</strong>（算术、赋值、关系、逻辑、位等运算）</p>
+<p><strong>2.流程控制语句</strong>（if\else、switch、while\do…while、for、foreach（用于遍历数组）、循环中断【break\continue\goto】)</p>
+<p>这里重点提一下foreach语句：</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> [] arr=<span class="keyword">new</span> <span class="built_in">int</span>[<span class="number">5</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="built_in">int</span> i=<span class="number">0</span>;i&lt;arr.length;i++)</span><br><span class="line">&#123;</span><br><span class="line">    arr[i]=i;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">int</span> j=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">foreach</span>(<span class="built_in">int</span> i <span class="keyword">in</span> arr)			<span class="comment">//i代替了arr当中的每个元素的变量名，它会自动遍历所有的元素，直到遍历完成</span></span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;array[&#123;0&#125;]=&#123;1&#125;&quot;</span>,j++,i);		</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>3.异常处理语句</strong></p>
+<p>在程序运行过程中，经常遇到错误而中断而中断程序的运行，这种情况叫做异常。</p>
+<p>在.NET Framework中，异常的基类（后面在继承会说明这个概念）为Exception.</p>
+<p>处理异常的语句有<em><strong>try…catch</strong></em>、<em><strong>throw</strong></em>、<em><strong>finally</strong></em>(这个语句和大多数面向对象编程语言一致)</p>
+<p>throw语句在特点情况下自动抛出异常，基本格式为</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">throw</span> expresion			<span class="comment">//expresion表示抛出的异常类型的对象（派生至System.Exception类的对象）</span></span><br></pre></td></tr></table></figure>
+
+<p>当 throw 语句执行时，它后面的语句将不执行，此时程序转向调用者程序，寻找与之相匹配的 catch 语句，执行相应的异常处理程序。如果没有找到相匹配的 catch 语句，则再转向上一层的调用程序。这样逐层向上，直到最外层的异常处理程序终止程序并打印出调用栈情况。</p>
+<p><em><strong>try…catch</strong></em>有三种形式：<em><strong>try</strong></em>后面跟一个或多个<em><strong>catch</strong></em>块；一个<em><strong>try</strong></em>块后接一个<em><strong>finally块</strong></em>，<em><strong>try</strong></em>后面跟一个或多个<em><strong>catch</strong></em>块后接一个<em><strong>finally块</strong></em></p>
+<h2 id="2-4-随机数"><a href="#2-4-随机数" class="headerlink" title="2.4 随机数"></a>2.4 随机数</h2><p>一般情况下我们使用都是<em><strong>伪随机数</strong></em>，它是由特定算法生成的随机数系列，并不是真正的随机数，但是有着随机数的一般性质。生成随机数需要给定随机种子，如果随机种子不变，生成的伪随机的数序也不会改变。在计算机当中往往采用伪随机数代替真正的随机数。</p>
+<p>1、生成随机整数：</p>
+<p>使用<em><strong>Rondom</strong></em>类创建对象，调用.Next()重载方法（方法的重载后面会讲，这里只需要知道重载就是方法的名字一样，参数类型或数目不一样）时，可以产生一个指定范围的随机整数。可以分为以下几种重载情况：</p>
+<p><em><strong>.Next()</strong></em>:系统以当前时间为随机数种子，返回一个非负随机整数</p>
+<p><em><strong>.Next(int maxValue)</strong></em>:系统以当前时间为随机数种子,返回一个0-~maxValue-1的随机整数</p>
+<p><em><strong>.Next(int minValue,int maxValue)</strong></em>:系统以当前时间为随机数种子,返回一个minValue~maxValue的随机整数。</p>
+<p>而当Random.NextDouble()接受double数据后，会与上述的方法差不多，只是返回值与形参变为了double了罢。</p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://dnanye.gitee.io/2022/09/10/C-%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/" title="C#语法基础" target="_blank" rel="external">https://dnanye.gitee.io/2022/09/10/C-语法基础/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/dnaye" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/dnaye" target="_blank"><span class="text-dark">无佢</span><small class="ml-1x">我怎么能成为你一个人的博主呢？不行！不行！（也不是不可以！）</small></a></h3>
+        <div></div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2022/09/10/c-%E6%A6%82%E8%BF%B0/" title="c#概述"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/dnanye" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://gitee.com/dnanye" target="_blank" title="Gitee" data-toggle=tooltip data-placement=top><i class="icon icon-gitee"></i></a></li>
+        
+        <li><a href="https://m.weibo.cn/profile/6013892152" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>
