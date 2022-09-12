@@ -17,21 +17,24 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>C#当中的类和对象 | Hexo</title>
-  <meta name="description" content="在C#需要使用对象进行编程实现时，我们需要将该对象的类给定义出来，毕竟类定义了每个对象应该有的什么属性（这里的属性和下文的属性不一样，这里的属性是指实体对象应当具有的特性）和什么动作。 创建新类的语法如下： 123456789101112131415[访问修饰符] class 类名&amp;#123;    [访问修饰符] &lt;数据类型&gt; 数据成员；	&#x2F;&#x2F;字段，这里和java的名称不一样在jav">
+  <title>c++语句与表达式 | Hexo</title>
+  <meta name="description" content="表达式表达式是由一个或多个运算对象组成，对表达式求值将得到一个结果。 字面值和变量是最简单的表达式，其结果就是字面值和变量的值。 基本概念  一元运算符（例如&amp; 、）和二元运算符（+、-、、&#x2F;），三元运算符（ ? : )  组合运算符和运算对象  运算符对象转换  重载运算符  左值和右值（C++语句要么是右值、要么是左值）  一个左值表达式的求值结果是一个对象或者一个函数。 常">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C#当中的类和对象">
-<meta property="og:url" content="https://dnanye.gitee.io/2022/09/10/c-class/index.html">
+<meta property="og:title" content="c++语句与表达式">
+<meta property="og:url" content="https://dnanye.gitee.io/2022/09/12/c-%E5%9F%BA%E7%A1%80/c-%E8%AF%AD%E5%8F%A5%E4%B8%8E%E8%A1%A8%E8%BE%BE%E5%BC%8F/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="在C#需要使用对象进行编程实现时，我们需要将该对象的类给定义出来，毕竟类定义了每个对象应该有的什么属性（这里的属性和下文的属性不一样，这里的属性是指实体对象应当具有的特性）和什么动作。 创建新类的语法如下： 123456789101112131415[访问修饰符] class 类名&amp;#123;    [访问修饰符] &lt;数据类型&gt; 数据成员；	&#x2F;&#x2F;字段，这里和java的名称不一样在jav">
+<meta property="og:description" content="表达式表达式是由一个或多个运算对象组成，对表达式求值将得到一个结果。 字面值和变量是最简单的表达式，其结果就是字面值和变量的值。 基本概念  一元运算符（例如&amp; 、）和二元运算符（+、-、、&#x2F;），三元运算符（ ? : )  组合运算符和运算对象  运算符对象转换  重载运算符  左值和右值（C++语句要么是右值、要么是左值）  一个左值表达式的求值结果是一个对象或者一个函数。 常">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-09-10T09:43:36.000Z">
-<meta property="article:modified_time" content="2022-09-10T09:49:24.663Z">
+<meta property="article:published_time" content="2022-09-12T11:17:56.000Z">
+<meta property="article:modified_time" content="2022-09-12T11:22:45.143Z">
 <meta property="article:author" content="nanye">
-<meta property="article:tag" content="C#">
+<meta property="article:tag" content="C++">
+<meta property="article:tag" content="语句">
+<meta property="article:tag" content="表达式">
+<meta property="article:tag" content="类型转换">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://dnanye.gitee.io/2022/09/10/c-class/index.html">
+  <link rel="canonical" href="https://dnanye.gitee.io/2022/09/12/c-%E5%9F%BA%E7%A1%80/c-%E8%AF%AD%E5%8F%A5%E4%B8%8E%E8%A1%A8%E8%BE%BE%E5%BC%8F/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -304,14 +307,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-c-class" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-c-基础/c-语句与表达式" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      C#当中的类和对象
+      c++语句与表达式
     </h1>
   
 
@@ -319,51 +322,136 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2022/09/10/c-class/" class="article-date">
-	  <time datetime="2022-09-10T09:43:36.000Z" itemprop="datePublished">2022-09-10</time>
+	<a href="/2022/09/12/c-%E5%9F%BA%E7%A1%80/c-%E8%AF%AD%E5%8F%A5%E4%B8%8E%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="article-date">
+	  <time datetime="2022-09-12T11:17:56.000Z" itemprop="datePublished">2022-09-12</time>
 	</a>
 </span>
         
   <span class="article-category">
     <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/C/">C#</a>
+    <a class="article-category-link" href="/categories/C/">C++</a>
   </span>
 
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/C/" rel="tag">C#</a>
+	<a class="article-tag-link-link" href="/tags/C/" rel="tag">C++</a>, <a class="article-tag-link-link" href="/tags/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" rel="tag">类型转换</a>, <a class="article-tag-link-link" href="/tags/%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">表达式</a>, <a class="article-tag-link-link" href="/tags/%E8%AF%AD%E5%8F%A5/" rel="tag">语句</a>
   </span>
 
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/09/10/c-class/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/09/12/c-%E5%9F%BA%E7%A1%80/c-%E8%AF%AD%E5%8F%A5%E4%B8%8E%E8%A1%A8%E8%BE%BE%E5%BC%8F/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <p>在C#需要使用对象进行编程实现时，我们需要将该对象的类给定义出来，毕竟类定义了每个对象应该有的什么属性（这里的属性和下文的属性不一样，这里的属性是指实体对象应当具有的特性）和什么动作。</p>
-<p>创建新类的语法如下：</p>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[访问修饰符] <span class="keyword">class</span> 类名</span><br><span class="line">&#123;</span><br><span class="line">    [访问修饰符] &lt;数据类型&gt; 数据成员；	<span class="comment">//字段，这里和java的名称不一样在java当中称为属性</span></span><br><span class="line">    [访问修饰符] &lt;返回值类型&gt; 方法名；    <span class="comment">//成员函数</span></span><br><span class="line">     <span class="comment">/*...</span></span><br><span class="line"><span class="comment">     除了定义以上两种成员意外我们还可以定义</span></span><br><span class="line"><span class="comment">     事件</span></span><br><span class="line"><span class="comment">     嵌套类</span></span><br><span class="line"><span class="comment">     属性（这个和java的不一样啊！！！）</span></span><br><span class="line"><span class="comment">     构造函数（很重要）</span></span><br><span class="line"><span class="comment">     析构函数</span></span><br><span class="line"><span class="comment">     ....</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">        </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h1><p>表达式是由一个或多个运算对象组成，对表达式求值将得到一个结果。</p>
+<p>字面值和变量是最简单的表达式，其结果就是字面值和变量的值。</p>
+<p><strong>基本概念</strong></p>
+<ol>
+<li><p>一元运算符（例如&amp; 、<em>）和二元运算符（+、-、</em>、&#x2F;），三元运算符（ ? : )</p>
+</li>
+<li><p>组合运算符和运算对象</p>
+</li>
+<li><p>运算符对象转换</p>
+</li>
+<li><p>重载运算符</p>
+</li>
+<li><p>左值和右值（C++语句要么是右值、要么是左值）</p>
+<ol>
+<li><p>一个左值表达式的求值结果是一个对象或者一个函数。</p>
+<p><strong>常量对象为代表的某些左值实际上不能作为赋值语句的左侧运算对象</strong></p>
+<p>虽然某些表达式的求值结果是对象，但是它是右值。</p>
+<p>​	<strong>总结：</strong></p>
+<p>​	<strong>当一个对象用作右值的时候，用的是对象的内容</strong></p>
+<p>​	<strong>当一个对象用作左值的时候，用的是对象的身份（在内存当中的位置）</strong></p>
+<p>在需要右值的时候可以用左值来代替，但是不能将右值当中左值（位置）使用</p>
+<p>当一个左值被当中右值使用时，实际使用的是它的内容。</p>
+</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> i = <span class="number">0</span>；</span><br><span class="line">    i = i+<span class="number">1</span>;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">i是一个对象，这个对象在赋值语句右侧时，用的是这个对象的值,该对象有一种右值属性</span></span><br><span class="line"><span class="comment">当对象在赋值语句的左侧时，用到是对象在内存中的地址，该对象具有左值属性</span></span><br><span class="line"><span class="comment">可以看到i是一个左值，但是它有着左值和右值属性</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>优先级和结合律</p>
+</li>
+<li><p>求值顺序</p>
+</li>
+</ol>
+<p><strong>算术运算符（+、-、*、&#x2F;、%）</strong></p>
+<p><strong>逻辑和关系运算符</strong></p>
+<p>！、&lt;、&gt;、&lt;&#x3D;、&#x3D;&gt;、&#x3D;&#x3D;、！&#x3D;、&amp;&amp;、||</p>
+<p><strong>赋值运算符（&#x3D;）</strong></p>
+<p><strong>递增、递减运算符（++、–)</strong></p>
+<p><strong>成员访问运算符(-&gt;、.)</strong></p>
+<p>点运输符和箭头运算符都可以用于访问对象</p>
+<p><em><strong>点运算符用于获取类对象的一个成员</strong></em></p>
+<p><em><strong>箭头运算符与点运算符有关</strong></em>，表达式：<code>ptr-&gt;mem和(*ptr).mem等价</code></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">string s1 = <span class="string">&quot;a string&quot;</span>, *p = &amp;s1;</span><br><span class="line"><span class="keyword">auto</span> n = s1.<span class="built_in">size</span>();</span><br><span class="line">	 n = (*p).<span class="built_in">size</span>();</span><br><span class="line">	 n = p-&gt;<span class="built_in">size</span>()</span><br></pre></td></tr></table></figure>
 
-<p>访问修饰符指定了类和其成员的访问权限规则，不指定则使用默认权限,修饰符有以下几种</p>
-<p><em><strong>public</strong></em>: 公有访问，可以被是由任意程序集访问</p>
-<p><em><strong>private</strong></em>: 私有访问，仅限本类成员（数据成员与方法成员访问）</p>
-<p><em><strong>internal</strong></em>：内部访问，在该程序集里的所有类均可访问</p>
-<p><em><strong>protected</strong></em>: 受保护访问，仅能由本类与该类的派生类访问。</p>
-<p>下面我们做一下举例：</p>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> 	<span class="keyword">class</span>	<span class="title">People</span>			<span class="comment">//创建“人”这个类</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span>	name;<span class="comment">//姓名</span></span><br><span class="line">	<span class="keyword">public</span> <span class="built_in">int</span> 		age;<span class="comment">//年龄</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> 		sex;<span class="comment">//性别</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span>		ID;<span class="comment">//ID号码</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//方法体（略）</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">	   	<span class="keyword">class</span>	<span class="title">Dog</span>				<span class="comment">//默认的访问修饰符为internal</span></span><br><span class="line">        &#123;</span><br><span class="line">         	<span class="keyword">public</span> <span class="built_in">string</span> name;</span><br><span class="line">            <span class="keyword">public</span> <span class="built_in">int</span> age;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> run</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">//...</span></span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">internal</span> Date<span class="comment">//是不是觉得很怪，但是它是表示protected or internal</span></span><br><span class="line">&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>看到<em><strong>class</strong></em>的定义你是否会想到<em><strong>C</strong></em>语言里面的结构体，想道它是否可以像<em><strong>C++<em><strong>那样用于定义类呢？其实</strong></em>class</strong></em>和<em><strong>struct</strong></em>可以用于创建对象，只不过<em><strong>struct</strong></em>创建的对象分布在<strong>栈</strong>上，<em><strong>class</strong></em>创建的对象则托管在<strong>堆</strong>上面。</p>
-<p>好了，我们已经知道了如何定义一个模板，那么我们如何根据模板创建一个实例呢？就像我们到餐厅点餐一样，我们知道了菜单。</p>
-<p>如何将菜单上的菜转换为一道可以食用的菜呢？不可能将菜单当作实物吃了吧！这时就想要让服务员告诉后厨我们需要的菜，并且后厨开始准备我们的菜，然后菜做好后让服务员从后厨端上来！</p>
-<p>这个过程就是<strong>实例化对象</strong>的过程，我们现在不对这个过程进行讲解，只要告诉你一个实例化对象的方法：使用<em><strong>new</strong></em>运算符就可实现。<del>所以编程圈里面有个笑话，找不到对象怎么办，new一个对象出来就行了</del></p>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Date date=<span class="keyword">new</span> Date();	</span><br></pre></td></tr></table></figure>
 
-<p>date是Date对象的名字，它到底存储的是什么我没找到答案，如果按照之前说的它是JAVA、C++等语言的集合体，那么我们可以推断其保存的是指向该对象的指针或引用。</p>
-<p>实例化对象的实质是在内存当中开辟一块内存（如果使用的是<em><strong>class</strong></em>,在堆内存存储，如果使用的是<em><strong>struct</strong></em>则在栈内存储）存储对象的字段和方法，而<strong>类则不会开辟内存，只有将类实例化为对象才会开辟对象。</strong></p>
+<p><strong>条件运算符（ ?  : )</strong></p>
+<p><strong>位运算符（~、&lt;&lt;、&gt;&gt;、&amp;、^、|)</strong></p>
+<p><strong>sizeof运算符</strong></p>
+<p>sizeof运算符返回一条表达式或一个类型名字所占的字节数。</p>
+<p>szieof满足右结合律，得到一个size_t类型的常量表达式，运算形式如下：</p>
+<p><strong>sizeof(type)</strong></p>
+<p><strong>sizeof expr</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Sales_data data, *p;</span><br><span class="line"><span class="built_in">sizeof</span> (Sales_data);		<span class="comment">//存储Sales_data类型的对象所占空间大小</span></span><br><span class="line"><span class="keyword">sizeof</span> data;			<span class="comment">//data类型的大小，即Sales_data类型所占空间大小</span></span><br><span class="line"><span class="built_in">sizeof</span> (p);				<span class="comment">//指针所占的大小</span></span><br><span class="line"><span class="built_in">sizeof</span> (*p);			<span class="comment">//p指向对象的大小，即Sales_data类型所占空间大小</span></span><br><span class="line"><span class="keyword">sizeof</span> data.revenue;	<span class="comment">//对象成员的大小</span></span><br></pre></td></tr></table></figure>
+
+<p>sizeof运算结果部分依赖与其作用的类型：</p>
+<ol>
+<li>char表达式或char类型执行sizeof运算，结果为1</li>
+<li>对引用类型执行sizeof得到被引用对象所占空间的大小</li>
+<li>对指针执行sizeof得到指针本身大小</li>
+<li>对解引用指针执行sizeof得到指向对象的空间大小</li>
+<li>对数组执行sizeof得到整个数组所占空间的大小</li>
+<li>对string&#x2F;vector类型对象执行sizeof运算符只返回该固定部分的大小</li>
+</ol>
+<p><strong>逗号运算符</strong></p>
+<p><strong>类型转换</strong></p>
+<p>隐式转换：略</p>
+<p>显式转换：</p>
+<p>当我们需要显式的将对象转换成另外一种类型，叫做<strong>强制类型转换（cast)</strong></p>
+<p>一个命名的强制类型转换具有如下形式：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*******</span></span><br><span class="line"><span class="comment">type是目标类型</span></span><br><span class="line"><span class="comment">expression是要转换的值</span></span><br><span class="line"><span class="comment">cast-name是static_cast、dynamic_cast、const_cast和reinterpret_cast当中的一种</span></span><br><span class="line"><span class="comment">*********/</span></span><br><span class="line">cast-<span class="built_in">name</span>&lt;name&gt;()(expression)		</span><br></pre></td></tr></table></figure>
+
+
+
+<p> <strong>static_cast</strong></p>
+<p>任何具有明确定义的类型转换，只要不包含底层const，都可以使用static_cast</p>
+<p>当需要将一个较大的算术类型转换为较小的算术类型时，static_cast非常有效。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> j = <span class="number">0</span>;</span><br><span class="line"><span class="type">double</span> slope = <span class="built_in">static_cast</span>&lt;<span class="type">double</span>&gt;(j) ;</span><br></pre></td></tr></table></figure>
+
+<p>static_cast对于无法自动执行的类型转换也非常有效。例如利用static_cast找到void*指针的值：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">void *p = &amp;d;		//任何非常量对象的地址均可存入void*</span><br><span class="line">double *dp = static_cast&lt;double*&gt;(p);	</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>const_cast</strong></p>
+<p>const_cast只能改变运算对象的底层const，将底层const转换为普通对象，也只有const_cast能够去除const属性,但是不能更改表达式类型</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">char</span> *pc;</span><br><span class="line"><span class="type">char</span> *p = <span class="built_in">const_cast</span>&lt;<span class="type">char</span>*&gt;(pc);		<span class="comment">//通过p写值是未定义的行为</span></span><br><span class="line"></span><br><span class="line"><span class="type">char</span> *q = <span class="keyword">static_cast</span>&lt;<span class="type">char</span>*&gt; （pc)		<span class="comment">//错误，不能通过static_cast修改const属性</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>reinterpret_cast</strong></p>
+<p>为运算对象的位模式提供较低层次的重新解释。</p>
+<h1 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h1><p><strong>表达式语句</strong>：表达式加上分号;</p>
+<p><strong>空语句</strong>：只有	;</p>
+<p><strong>复合语句</strong></p>
+<p><strong>语句作用域</strong></p>
+<p><strong>条件语句</strong></p>
+<p><strong>迭代语句</strong></p>
+<p><strong>跳转语句</strong></p>
+<p><strong>语句处理语句</strong></p>
+<h1 id="标准异常"><a href="#标准异常" class="headerlink" title="标准异常"></a>标准异常</h1><p>C++标准库 定义了一组类用于报告标准库函数遇到的问题，分别定义在以下4个头文件当中：</p>
+<ol>
+<li>exception:最通常的异常类</li>
+<li>stdexcept</li>
+<li>new：定义了bad_alloc异常</li>
+<li>type_info：定义了bad_cast异常</li>
+</ol>
 
       
     </div>
@@ -373,7 +461,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://dnanye.gitee.io/2022/09/10/c-class/" title="C#当中的类和对象" target="_blank" rel="external">https://dnanye.gitee.io/2022/09/10/c-class/</a>
+      <a href="https://dnanye.gitee.io/2022/09/12/c-%E5%9F%BA%E7%A1%80/c-%E8%AF%AD%E5%8F%A5%E4%B8%8E%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="c++语句与表达式" target="_blank" rel="external">https://dnanye.gitee.io/2022/09/12/c-基础/c-语句与表达式/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -419,13 +507,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2022/09/12/c-%E5%9F%BA%E7%A1%80/c-%E5%9F%BA%E7%A1%80/" title="c++基础"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2022/09/10/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="面向对象"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2022/09/12/c-%E5%9F%BA%E7%A1%80/c-%E5%9F%BA%E7%A1%80/" title="c++基础"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     

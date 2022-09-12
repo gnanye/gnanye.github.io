@@ -6,7 +6,7 @@
   <link href="https://dnanye.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://dnanye.gitee.io/"/>
-  <updated>2022-09-12T05:19:40.335Z</updated>
+  <updated>2022-09-12T11:22:45.143Z</updated>
   <id>https://dnanye.gitee.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>c++语句与表达式</title>
+    <link href="https://dnanye.gitee.io/2022/09/12/c-%E5%9F%BA%E7%A1%80/c-%E8%AF%AD%E5%8F%A5%E4%B8%8E%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    <id>https://dnanye.gitee.io/2022/09/12/c-%E5%9F%BA%E7%A1%80/c-%E8%AF%AD%E5%8F%A5%E4%B8%8E%E8%A1%A8%E8%BE%BE%E5%BC%8F/</id>
+    <published>2022-09-12T11:17:56.000Z</published>
+    <updated>2022-09-12T11:22:45.143Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h1><p>表达式是由一个或多个运算对象组成，对表达式求值将得到一个结果。</p><p>字面值和变量是最简单的表达式，其结果就是字面值和变量的值。</p><p><strong>基本概念</strong></p><ol><li><p>一元运算符（例如&amp; 、<em>）和二元运算符（+、-、</em>、&#x2F;），三元运算符（ ? : )</p></li><li><p>组合运算符和运算对象</p></li><li><p>运算符对象转换</p></li><li><p>重载运算符</p></li><li><p>左值和右值（C++语句要么是右值、要么是左值）</p><ol><li><p>一个左值表达式的求值结果是一个对象或者一个函数。</p><p><strong>常量对象为代表的某些左值实际上不能作为赋值语句的左侧运算对象</strong></p><p>虽然某些表达式的求值结果是对象，但是它是右值。</p><p>​<strong>总结：</strong></p><p>​<strong>当一个对象用作右值的时候，用的是对象的内容</strong></p><p>​<strong>当一个对象用作左值的时候，用的是对象的身份（在内存当中的位置）</strong></p><p>在需要右值的时候可以用左值来代替，但是不能将右值当中左值（位置）使用</p><p>当一个左值被当中右值使用时，实际使用的是它的内容。</p></li></ol><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> i = <span class="number">0</span>；</span><br><span class="line">    i = i+<span class="number">1</span>;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">i是一个对象，这个对象在赋值语句右侧时，用的是这个对象的值,该对象有一种右值属性</span></span><br><span class="line"><span class="comment">当对象在赋值语句的左侧时，用到是对象在内存中的地址，该对象具有左值属性</span></span><br><span class="line"><span class="comment">可以看到i是一个左值，但是它有着左值和右值属性</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure></li><li><p>优先级和结合律</p></li><li><p>求值顺序</p></li></ol><p><strong>算术运算符（+、-、*、&#x2F;、%）</strong></p><p><strong>逻辑和关系运算符</strong></p><p>！、&lt;、&gt;、&lt;&#x3D;、&#x3D;&gt;、&#x3D;&#x3D;、！&#x3D;、&amp;&amp;、||</p><p><strong>赋值运算符（&#x3D;）</strong></p><p><strong>递增、递减运算符（++、–)</strong></p><p><strong>成员访问运算符(-&gt;、.)</strong></p><p>点运输符和箭头运算符都可以用于访问对象</p><p><em><strong>点运算符用于获取类对象的一个成员</strong></em></p><p><em><strong>箭头运算符与点运算符有关</strong></em>，表达式：<code>ptr-&gt;mem和(*ptr).mem等价</code></p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">string s1 = <span class="string">&quot;a string&quot;</span>, *p = &amp;s1;</span><br><span class="line"><span class="keyword">auto</span> n = s1.<span class="built_in">size</span>();</span><br><span class="line"> n = (*p).<span class="built_in">size</span>();</span><br><span class="line"> n = p-&gt;<span class="built_in">size</span>()</span><br></pre></td></tr></table></figure><p><strong>条件运算符（ ?  : )</strong></p><p><strong>位运算符（~、&lt;&lt;、&gt;&gt;、&amp;、^、|)</strong></p><p><strong>sizeof运算符</strong></p><p>sizeof运算符返回一条表达式或一个类型名字所占的字节数。</p><p>szieof满足右结合律，得到一个size_t类型的常量表达式，运算形式如下：</p><p><strong>sizeof(type)</strong></p><p><strong>sizeof expr</strong></p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Sales_data data, *p;</span><br><span class="line"><span class="built_in">sizeof</span> (Sales_data);<span class="comment">//存储Sales_data类型的对象所占空间大小</span></span><br><span class="line"><span class="keyword">sizeof</span> data;<span class="comment">//data类型的大小，即Sales_data类型所占空间大小</span></span><br><span class="line"><span class="built_in">sizeof</span> (p);<span class="comment">//指针所占的大小</span></span><br><span class="line"><span class="built_in">sizeof</span> (*p);<span class="comment">//p指向对象的大小，即Sales_data类型所占空间大小</span></span><br><span class="line"><span class="keyword">sizeof</span> data.revenue;<span class="comment">//对象成员的大小</span></span><br></pre></td></tr></table></figure><p>sizeof运算结果部分依赖与其作用的类型：</p><ol><li>char表达式或char类型执行sizeof运算，结果为1</li><li>对引用类型执行sizeof得到被引用对象所占空间的大小</li><li>对指针执行sizeof得到指针本身大小</li><li>对解引用指针执行sizeof得到指向对象的空间大小</li><li>对数组执行sizeof得到整个数组所占空间的大小</li><li>对string&#x2F;vector类型对象执行sizeof运算符只返回该固定部分的大小</li></ol><p><strong>逗号运算符</strong></p><p><strong>类型转换</strong></p><p>隐式转换：略</p><p>显式转换：</p><p>当我们需要显式的将对象转换成另外一种类型，叫做<strong>强制类型转换（cast)</strong></p><p>一个命名的强制类型转换具有如下形式：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*******</span></span><br><span class="line"><span class="comment">type是目标类型</span></span><br><span class="line"><span class="comment">expression是要转换的值</span></span><br><span class="line"><span class="comment">cast-name是static_cast、dynamic_cast、const_cast和reinterpret_cast当中的一种</span></span><br><span class="line"><span class="comment">*********/</span></span><br><span class="line">cast-<span class="built_in">name</span>&lt;name&gt;()(expression)</span><br></pre></td></tr></table></figure><p> <strong>static_cast</strong></p><p>任何具有明确定义的类型转换，只要不包含底层const，都可以使用static_cast</p><p>当需要将一个较大的算术类型转换为较小的算术类型时，static_cast非常有效。</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> j = <span class="number">0</span>;</span><br><span class="line"><span class="type">double</span> slope = <span class="built_in">static_cast</span>&lt;<span class="type">double</span>&gt;(j) ;</span><br></pre></td></tr></table></figure><p>static_cast对于无法自动执行的类型转换也非常有效。例如利用static_cast找到void*指针的值：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">void *p = &amp;d;//任何非常量对象的地址均可存入void*</span><br><span class="line">double *dp = static_cast&lt;double*&gt;(p);</span><br></pre></td></tr></table></figure><p><strong>const_cast</strong></p><p>const_cast只能改变运算对象的底层const，将底层const转换为普通对象，也只有const_cast能够去除const属性,但是不能更改表达式类型</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">char</span> *pc;</span><br><span class="line"><span class="type">char</span> *p = <span class="built_in">const_cast</span>&lt;<span class="type">char</span>*&gt;(pc);<span class="comment">//通过p写值是未定义的行为</span></span><br><span class="line"></span><br><span class="line"><span class="type">char</span> *q = <span class="keyword">static_cast</span>&lt;<span class="type">char</span>*&gt; （pc)<span class="comment">//错误，不能通过static_cast修改const属性</span></span><br></pre></td></tr></table></figure><p><strong>reinterpret_cast</strong></p><p>为运算对象的位模式提供较低层次的重新解释。</p><h1 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h1><p><strong>表达式语句</strong>：表达式加上分号;</p><p><strong>空语句</strong>：只有;</p><p><strong>复合语句</strong></p><p><strong>语句作用域</strong></p><p><strong>条件语句</strong></p><p><strong>迭代语句</strong></p><p><strong>跳转语句</strong></p><p><strong>语句处理语句</strong></p><h1 id="标准异常"><a href="#标准异常" class="headerlink" title="标准异常"></a>标准异常</h1><p>C++标准库 定义了一组类用于报告标准库函数遇到的问题，分别定义在以下4个头文件当中：</p><ol><li>exception:最通常的异常类</li><li>stdexcept</li><li>new：定义了bad_alloc异常</li><li>type_info：定义了bad_cast异常</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;表达式&quot;&gt;&lt;a href=&quot;#表达式&quot; class=&quot;headerlink&quot; title=&quot;表达式&quot;&gt;&lt;/a&gt;表达式&lt;/h1&gt;&lt;p&gt;表达式是由一个或多个运算对象组成，对表达式求值将得到一个结果。&lt;/p&gt;
+&lt;p&gt;字面值和变量是最简单的表达式，其结果就是字面值和变量的</summary>
+      
+    
+    
+    
+    <category term="C++" scheme="https://dnanye.gitee.io/categories/C/"/>
+    
+    
+    <category term="C++" scheme="https://dnanye.gitee.io/tags/C/"/>
+    
+    <category term="语句" scheme="https://dnanye.gitee.io/tags/%E8%AF%AD%E5%8F%A5/"/>
+    
+    <category term="表达式" scheme="https://dnanye.gitee.io/tags/%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    
+    <category term="类型转换" scheme="https://dnanye.gitee.io/tags/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/"/>
+    
+  </entry>
   
   <entry>
     <title>c++基础</title>
@@ -75,7 +106,7 @@
     <link href="https://dnanye.gitee.io/2022/09/10/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
     <id>https://dnanye.gitee.io/2022/09/10/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</id>
     <published>2022-09-10T04:46:05.000Z</published>
-    <updated>2022-09-10T04:54:24.214Z</updated>
+    <updated>2022-09-12T07:28:29.119Z</updated>
     
     <content type="html"><![CDATA[<h1 id="C-面向对象编程"><a href="#C-面向对象编程" class="headerlink" title="C#面向对象编程"></a>C#面向对象编程</h1><p>我们之前提到很多次的面向对象，那么你应该有一个疑惑：对象，这是个嘛玩意？可以用来做什么？</p><p>在说面向对象之前，我们先看一段对话：</p><blockquote><p>苏格拉底:我们的论敌要问了:请告诉我什么是美?</p><p>希庇亚:我想他问的问题是,什么东西是美的? </p><p>苏格拉底:我想不是这个意思,他要问的是美是什么。</p><p>希庇亚:这两个问题有区别吗?</p><p>苏格拉底:有区别。他问的不是:什么东西是美的,而是:什么是 美?请你想一想。</p><p>希庇亚:我懂了,我来告诉他什么是美,叫他无法反驳。什么是美， 苏格拉底你记清楚,美是一位漂亮小姐。</p><p>苏格拉底:好!回答得真妙!不过我要是这样回答,可要遭到论敌反驳。我的论敌会这样问我:“苏格拉底,请答复这个问题:凡是美的那些东西真正是美,是不是因为有一个美本身存在,才使那些东西美 ?”我就会回答他说,一位漂亮的年轻小姐的美,就是使一切东西成其为美的。你以为如何?</p><p>希庇亚: 他敢说漂亮的年轻小姐不美吗?</p><p>苏格拉底:他当然敢,他会说:“你真妙,苏格拉底,但是一匹漂亮的母马不也可以是美的吗?神不是也曾经称赞过马的美?”</p><p>希庇亚:不错,神说母马很美,是有道理的。</p></blockquote><p>看出来了吗？苏格拉底一说的“美”是一种抽象的概念，而希庇亚则用具体的事物进行回答。</p><p>按照上面的逻辑我们可以得知一个推论：</p><p>“美”这个概念是一切美的事物所具有的抽象集合体，而“美人”、“马”这些东西则是具有“美”这个共有概念的具体实物。</p><p>那么我们也可以继续推导到我们需要的概念：某个抽象的概念是一群具有共有的特性的实物而形成的，而每个实物都具有该概念的特性。可能有点过于抽象了，我们这样说：</p><p>狗是一个抽象的概念吧，每种狗都有一些特有的属性（例如具有身高、体重）和一些动作（跑、跳、走）。</p><p>比如某一只哈士奇是一个具体的动物吧，它具有狗这个抽象概念这一特性的所有内容，它包含狗所特有的属性和动作。例如这只狗身高一米，体重40斤，它也会跑、会走。</p><p>那么我们就可以说“狗”这一对所有狗具有的所有特性的抽象概念叫做<strong>类</strong>，类就是一个<strong>模板</strong>，它并不是一个具体的东西，例如我们我们根据“狗”这抽象概念，我们以后发现一种新的生物它满足这个概念的全部内容，那么我们会将其称为某一种狗。那种生物就是狗这个抽象概念的具体实现。</p><p>按照我们前面说的那种生物的某一只实体（你随便可以将它命名为Al狗，只要是一种狗就行了）是根据“狗”这一抽象概念的具体实现我们叫做<strong>对象</strong>，既然如此某只哈士奇也是“狗”这一抽象概念的具体实现”，我们也叫哈士奇是一个对象。</p><p>好了！我们总结一下<strong>：类就是所有对象的抽象，所有对象就是类的具体实现，对象具有类这个模板的所有特性！！！</strong></p><p>既然我们知道了什么是对象了，那么面向对象又是什么呢？这一点我们和面向过程编程对比举个栗子说一下：</p><p>比如笔者看书这个行为，如果用面向过程编程的方式要这么做：笔者去寻找笔者需要看的书，笔者看到需要的书后将其拿到书桌，笔者翻开书，书被翻开，笔者好好的看书，最后将书闭合放回原处。</p><p>如果用面向对象编程的方式只要这么做：定义两个对象，一个对象是由三次元的“人”这个类具体化而成的“笔者”这个对象，笔者这个对象需要定义几个属性：姓名、性别、地址、编号——不然这怎么确认我是我呢！（笑）还要几个动作（找书、拿书、翻书、放书）才能完成看书这个事件。</p><p>一个对象是书，也需要定义几个属性：书名、ISBN编号、作者等等相关信息，不然笔者可能找到一堆莫名其妙的东西了！还有一个书被翻开的动作。</p><p>面向对象只需要将两个对象组合在一起就可以完成这一个程序的所有功能。</p>]]></content>
     
@@ -88,10 +119,6 @@
     
     
     <category term="C#" scheme="https://dnanye.gitee.io/categories/C/"/>
-    
-    <category term="JAVA" scheme="https://dnanye.gitee.io/categories/C/JAVA/"/>
-    
-    <category term="C++" scheme="https://dnanye.gitee.io/categories/C/JAVA/C/"/>
     
     
     <category term="JAVA" scheme="https://dnanye.gitee.io/tags/JAVA/"/>
